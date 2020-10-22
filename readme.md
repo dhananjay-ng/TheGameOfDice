@@ -1,4 +1,9 @@
-
+For Installation :<br>
+1.Import java project in intellij/eclipse IDE<br>
+2.While importing choose option to import from existing sources from file menu<br>
+3.In intellij > File > Project From Existing Sources > Then select folder that you want to import and follow the import model <br>
+3.To run the project java version >=8 needs to be installed on machine<br>
+4.After project is opened, run following file :  TheGameOfDice.java 
 
 
 
@@ -131,7 +136,5 @@ Player-3     12           3
 
 
 Thank you all for participating in game :)
-Disconnected from the target VM, address: '127.0.0.1:62946', transport: 'socket'
 
-Process finished with exit code 0
 ```
