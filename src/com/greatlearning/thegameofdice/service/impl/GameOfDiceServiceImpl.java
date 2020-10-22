@@ -1,9 +1,5 @@
 package com.greatlearning.thegameofdice.service.impl;
 
-import static com.greatlearning.thegameofdice.GameHelper.initializePlayers;
-import static com.greatlearning.thegameofdice.GameHelper.printDiceRollInstruction;
-import static com.greatlearning.thegameofdice.GameHelper.printGameStatistics;
-import static com.greatlearning.thegameofdice.GameHelper.sortPlayerByRankingAsc;
 import static com.greatlearning.thegameofdice.constants.GameOfDiceConstants.DICE_ROLL_MAX_SCORE;
 import static com.greatlearning.thegameofdice.constants.GameOfDiceConstants.DICE_ROLL_MIN_SCORE;
 import static com.greatlearning.thegameofdice.constants.GameOfDiceConstants.MESSAGE_DICE_ROLL_SCORE;
@@ -12,6 +8,10 @@ import static com.greatlearning.thegameofdice.constants.GameOfDiceConstants.ROLL
 import static com.greatlearning.thegameofdice.constants.GameOfDiceConstants.RULE_EXTRA_CHANCE;
 import static com.greatlearning.thegameofdice.constants.GameOfDiceConstants.RULE_PENALTY;
 import static com.greatlearning.thegameofdice.constants.GameOfDiceConstants.RULE_PENALTY_TURN_SKIP;
+import static com.greatlearning.thegameofdice.helper.GameHelper.initializePlayers;
+import static com.greatlearning.thegameofdice.helper.GameHelper.printDiceRollInstruction;
+import static com.greatlearning.thegameofdice.helper.GameHelper.printGameStatistics;
+import static com.greatlearning.thegameofdice.helper.GameHelper.sortPlayerByRankingAsc;
 
 import com.greatlearning.thegameofdice.model.Player;
 import com.greatlearning.thegameofdice.service.GameOfDiceService;
@@ -56,14 +56,11 @@ public class GameOfDiceServiceImpl implements GameOfDiceService {
 
       Player currentPlayingPlayer = playersQueue.removeFirst();
 
-      //Rule: If Player is in penalty they will not be given chance, so we will remove penalty
-      //of user and reset his last points
       if (currentPlayingPlayer.isInPenalty()) {
         System.out.printf(RULE_PENALTY_TURN_SKIP, currentPlayingPlayer.getPlayerName());
         currentPlayingPlayer.setInPenalty(false);
         currentPlayingPlayer.setLastPoints(0);
 
-        //player will be added to last of queue so that his turn will come later
         playersQueue.addLast(currentPlayingPlayer);
         continue;
       }

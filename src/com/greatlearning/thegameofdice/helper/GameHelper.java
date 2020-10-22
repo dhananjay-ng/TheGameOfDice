@@ -1,4 +1,4 @@
-package com.greatlearning.thegameofdice;
+package com.greatlearning.thegameofdice.helper;
 
 import static com.greatlearning.thegameofdice.constants.GameOfDiceConstants.MESSAGE_DICE_ROLL_INSTRUCTION;
 import static com.greatlearning.thegameofdice.constants.GameOfDiceConstants.MESSAGE_PLAYER_NAME;
